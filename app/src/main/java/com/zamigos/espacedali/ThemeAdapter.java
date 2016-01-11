@@ -1,6 +1,7 @@
 package com.zamigos.espacedali;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,7 @@ public class ThemeAdapter extends BaseAdapter{
 
             viewHolder = new ViewHolder();
             viewHolder.tvTheme = (TextView) rowView.findViewById(R.id.tvTheme);
+            viewHolder.tvHidden = (TextView) rowView.findViewById(R.id.tvHidden);
             viewHolder.imgTheme = (ImageView) rowView.findViewById(R.id.imgTheme);
 
             rowView.setTag(viewHolder);
@@ -70,6 +72,7 @@ public class ThemeAdapter extends BaseAdapter{
         final Theme theme = (Theme) getItem(position);
 
         viewHolder.tvTheme.setText(theme.getLabel() + "");
+        viewHolder.tvHidden.setText(theme.getId());
         Picasso.with(rowView.getContext()).load(theme.getImage()).into(viewHolder.imgTheme);
 
         return rowView;
@@ -80,6 +83,7 @@ public class ThemeAdapter extends BaseAdapter{
     //------------------
     public static class ViewHolder {
         public TextView tvTheme;
+        public TextView tvHidden;
         public ImageView imgTheme;
     }
 }
