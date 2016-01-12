@@ -46,10 +46,10 @@ public class OeuvreActivity extends AppCompatActivity {
         gvOeuvre.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Intent intent = new Intent(OeuvreActivity.this, DetailActivity.class);
-                //intent.putExtra("idTheme", ((TextView) view.findViewById(R.id.tvHidden)).getText().toString());
-                //startActivity(intent);
-                //setContentView(R.layout.activity_detail);
+                Intent intent = new Intent(OeuvreActivity.this, DetailActivity.class);
+                intent.putExtra("idTheme", ((TextView) view.findViewById(R.id.tvHiddenOeuvre)).getText().toString());
+                startActivity(intent);
+                setContentView(R.layout.activity_detail);
             }
         });
     }
