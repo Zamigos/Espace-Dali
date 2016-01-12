@@ -12,9 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private Button btnOeuvre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,17 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        btnOeuvre = (Button) findViewById(R.id.btnOeuvre);
+
+        btnOeuvre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
+                startActivity(intent);
+                setContentView(R.layout.activity_theme);
+            }
+        });
     }
 
     @Override
