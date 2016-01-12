@@ -20,9 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CommentActivity" />
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".ThemeActivity" />
-        <activity android:name=".OeuvreActivity" />
+        <activity
+            android:name=".CommentActivity"
+            android:parentActivityName=".DetailActivity"
+            android:label="@string/activity_title_comment"/>
+        <activity
+            android:name=".ThemeActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/activity_title_theme"/>
+        <activity
+            android:name=".OeuvreActivity"
+            android:parentActivityName=".ThemeActivity"
+            android:label="@string/activity_title_oeuvre"/>
+        <activity
+            android:name=".DetailActivity"
+            android:parentActivityName=".OeuvreActivity"
+            android:label="@string/activity_title_detail"/>
     </application>
 </manifest>
