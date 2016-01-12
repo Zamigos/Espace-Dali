@@ -9,10 +9,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:id="@+id/ivImage"
         android:maxHeight="240dp"
-        android:minHeight="240dp"
-        android:src="@drawable/favoris" />
+        android:minHeight="240dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -20,40 +19,38 @@
         android:layout_height="220dp"
         android:padding="20dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tvTitle"
+            android:layout_marginRight="20dp" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/ibFavori"
+                android:src="@drawable/ic_menu_favorite_detail"
+                android:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Title"
-                android:id="@+id/tvTitle"
-                android:layout_marginRight="20dp" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/tvDate"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton"
-                android:src="@drawable/favoris"
-                android:scaleType="fitXY" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Date"
-            android:id="@+id/tvDate"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="New Text"
             android:id="@+id/tvDescription" />
 
     </LinearLayout>

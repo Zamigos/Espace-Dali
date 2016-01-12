@@ -42,4 +42,15 @@ public class ChargementOeuvre {
         }
         return result;
     }
+
+    public static Oeuvre findOeuvreById(int idOeuvre) {
+        ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();
+        Oeuvre oeuvre;
+        for (Oeuvre o : oeuvres) {
+            if (o.getId() == idOeuvre) {
+                return o;
+            }
+        }
+        return null;
+    }
 }
