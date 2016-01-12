@@ -1,11 +1,12 @@
 package com.zamigos.espacedali;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by pringuez on 11/01/2016.
  */
-public class Oeuvre {
+public class Oeuvre implements Serializable {
     private int id;
     private String title;
     private int date;
@@ -69,4 +70,5 @@ public class Oeuvre {
     public void setImage(String image) {
         this.image = image;
     }
+
 }

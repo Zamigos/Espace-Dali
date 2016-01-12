@@ -72,7 +72,7 @@ public class ThemeAdapter extends BaseAdapter{
         final Theme theme = (Theme) getItem(position);
 
         viewHolder.tvTheme.setText(theme.getLabel() + "");
-        viewHolder.tvHidden.setText(theme.getId());
+        viewHolder.tvHidden.setText(theme.getId() + "");
         Picasso.with(rowView.getContext()).load(theme.getImage()).into(viewHolder.imgTheme);
 
         return rowView;

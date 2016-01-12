@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -38,7 +39,7 @@ public class ThemeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ThemeActivity.this, OeuvreActivity.class);
-                intent.putExtra("idOeuvre", ((TextView) view.findViewById(R.id.tvHidden)).getText().toString());
+                intent.putExtra("idTheme", ((TextView) view.findViewById(R.id.tvHidden)).getText().toString());
                 startActivity(intent);
                 setContentView(R.layout.activity_oeuvre);
             }

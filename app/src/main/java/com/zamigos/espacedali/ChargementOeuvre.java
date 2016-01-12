@@ -1,5 +1,7 @@
 package com.zamigos.espacedali;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
@@ -10,12 +12,9 @@ import java.util.Date;
  * Created by pringuez on 11/01/2016.
  */
 public class ChargementOeuvre {
+
     public static ArrayList<Oeuvre> getOeuvre() {
         ArrayList<Oeuvre> oeuvres = new ArrayList<>();
-
-        //SimpleDateFormat formater = new SimpleDateFormat("yyyy");
-        //System.out.println(formater.format(aujourdhui));
-        //DateFormat
 
         oeuvres.add(new Oeuvre(1, "Le Profil du temps", 1977, "", "http://daliparis.com/public/Galerie-Dali/profile-of-time-.jpg", 1));
         oeuvres.add(new Oeuvre(2, "L'éléphant spatial", 1971, "", "http://daliparis.com/public/Galerie-Dali/space-elephant.jpg", 1));
@@ -30,5 +29,17 @@ public class ChargementOeuvre {
         oeuvres.add(new Oeuvre(10, "Métamorphose de Narcisse", 1937, "", "http://media.topito.com/wp-content/uploads/2012/11/M%C3%A9tamorphose-de-Narcisse.jpg", 2));
 
         return oeuvres;
+    }
+
+    public ArrayList<Oeuvre> findOeuvreByTheme(int idTheme){
+        ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();
+        ArrayList<Oeuvre> result = new ArrayList<>();
+        Log.v("WARNING", "index=" + idTheme);
+        for (Oeuvre o : oeuvres) {
+            if(o.getIdTheme() == idTheme){
+                result.add(o);
+            }
+        }
+        return result;
     }
 }

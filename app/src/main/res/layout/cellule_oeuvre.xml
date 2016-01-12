@@ -4,7 +4,13 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imgOeuvreGrid" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imgOeuvreGrid" />
+        android:id="@+id/tvHiddenOeuvre"
+        android:visibility="gone" />
 </LinearLayout>
