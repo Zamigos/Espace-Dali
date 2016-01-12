@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_info) {
 
-        } else if (id == R.id.nav_favorite) {
+        } else if (id == R.id.nav_map) {
 
         }
 
