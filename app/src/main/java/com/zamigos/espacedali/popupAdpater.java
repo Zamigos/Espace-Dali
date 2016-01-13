@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.model.Marker;
@@ -29,6 +30,10 @@ class PopupAdapter implements InfoWindowAdapter {
     public View getInfoContents(Marker marker) {
         if (popup == null) {
             popup=inflater.inflate(R.layout.popup, null);
+            if(inflater.getContext().getClass().toString().contains("InfoActivity")){
+                ImageView imgPopup = (ImageView)popup.findViewById(R.id.imgPopup);
+                imgPopup.setImageResource(R.drawable.logo_daliparis);
+            }
         }
 
         TextView tv=(TextView)popup.findViewById(R.id.title);
