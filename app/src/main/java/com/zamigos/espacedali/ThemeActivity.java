@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ThemeActivity extends AppCompatActivity {
+public class ThemeActivity extends MainActivity {
 
     private InitTheme initTheme;
     private ArrayList<Theme> themeArrayList;
@@ -24,7 +24,7 @@ public class ThemeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_theme);
+        super.setContentView(R.layout.activity_theme);
 
         lvTheme = (ListView) findViewById(R.id.lvTheme);
         imgTheme = (ImageView) findViewById(R.id.imgTheme);
@@ -41,7 +41,6 @@ public class ThemeActivity extends AppCompatActivity {
                 Intent intent = new Intent(ThemeActivity.this, OeuvreActivity.class);
                 intent.putExtra("idTheme", ((TextView) view.findViewById(R.id.tvHidden)).getText().toString());
                 startActivity(intent);
-                setContentView(R.layout.activity_oeuvre);
             }
         });
     }

@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.Console;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends MainActivity {
 
     private Button btnComment;
     private TextView tvTitle;
@@ -26,7 +26,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        super.setContentView(R.layout.activity_detail);
 
         btnComment = (Button) findViewById(R.id.btnComments);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
@@ -51,7 +51,6 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DetailActivity.this, CommentActivity.class);
                 startActivity(intent);
-                setContentView(R.layout.activity_comments);
             }
         });
     }

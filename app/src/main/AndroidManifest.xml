@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,29 +12,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".CommentActivity"
-            android:parentActivityName=".DetailActivity"
-            android:label="@string/activity_title_comment"/>
+            android:label="@string/activity_title_comment"
+            android:parentActivityName=".DetailActivity" />
         <activity
             android:name=".ThemeActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/activity_title_theme"/>
+            android:label="@string/activity_title_theme"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".OeuvreActivity"
-            android:parentActivityName=".ThemeActivity"
-            android:label="@string/activity_title_oeuvre"/>
+            android:label="@string/activity_title_oeuvre"
+            android:parentActivityName=".ThemeActivity" />
         <activity
             android:name=".DetailActivity"
-            android:parentActivityName=".OeuvreActivity"
-            android:label="@string/activity_title_detail"/>
+            android:label="@string/activity_title_detail"
+            android:parentActivityName=".OeuvreActivity" />
+        <activity
+            android:name=".MainActivity" />
+
     </application>
+
 </manifest>

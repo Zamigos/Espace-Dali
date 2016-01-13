@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class CommentActivity extends AppCompatActivity {
+public class CommentActivity extends MainActivity {
 
     private ArrayList<Comment> commentArrayList;
     private CommentAdpater commentAdpater;
@@ -19,7 +19,7 @@ public class CommentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comments);
+        super.setContentView(R.layout.activity_comments);
 
         lvComment = (ListView) findViewById(R.id.lvComment);
         commentArrayList = new ArrayList<>();

@@ -10,18 +10,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.content.Intent;
+import android.view.ViewStub;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Button btnOeuvre;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,16 +32,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        btnOeuvre = (Button) findViewById(R.id.btnOeuvre);
+    }
 
-        btnOeuvre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
-                startActivity(intent);
-                setContentView(R.layout.activity_theme);
-            }
-        });
+    @Override
+    public void setContentView(int layoutResID) {
+
+        ViewStub stub = (ViewStub) findViewById(R.id.layout_include);
+        stub.setLayoutResource(layoutResID);
+        View inflated = stub.inflate();
+
     }
 
     @Override

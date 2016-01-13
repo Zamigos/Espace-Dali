@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class OeuvreActivity extends AppCompatActivity {
+public class OeuvreActivity extends MainActivity {
 
     private GridView gvOeuvre;
     private ImageView imgOeuvreGrid;
@@ -26,7 +26,7 @@ public class OeuvreActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_oeuvre);
+        super.setContentView(R.layout.activity_oeuvre);
 
 
         Log.v("WARNING", "test1=" + idTheme);
@@ -49,7 +49,6 @@ public class OeuvreActivity extends AppCompatActivity {
                 Intent intent = new Intent(OeuvreActivity.this, DetailActivity.class);
                 intent.putExtra("idTheme", ((TextView) view.findViewById(R.id.tvHiddenOeuvre)).getText().toString());
                 startActivity(intent);
-                setContentView(R.layout.activity_detail);
             }
         });
     }
