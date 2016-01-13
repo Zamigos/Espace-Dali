@@ -9,12 +9,12 @@ import java.util.Date;
 public class Oeuvre implements Serializable {
     private int id;
     private String title;
-    private int date;
+    private String date;
     private String description;
     private String image;
     private int idTheme;
 
-    public Oeuvre(int id, String title, int date, String description, String image, int idTheme) {
+    public Oeuvre(int id, String title, String date, String description, String image, int idTheme) {
         this.id = id;
         this.title = title;
         this.date = date;
@@ -47,11 +47,11 @@ public class Oeuvre implements Serializable {
         this.title = title;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
