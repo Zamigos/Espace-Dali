@@ -14,6 +14,7 @@ import android.widget.Button;
 public class HomeActivity extends MainActivity {
 
     private Button btnOeuvre;
+    private Button btnPlan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,15 @@ public class HomeActivity extends MainActivity {
         super.setContentView(R.layout.content_main);
 
         btnOeuvre = (Button) findViewById(R.id.btnOeuvre);
+        btnPlan = (Button) findViewById(R.id.btnPlan);
 
+        btnPlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, PlanActivity.class);
+                startActivity(intent);
+            }
+        });
         btnOeuvre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
