@@ -44,7 +44,7 @@ public class FavoriteAdpater extends BaseAdapter {
             rowView = layoutInflater.inflate(R.layout.cell_favorite, null);
 
             viewHolder = new ViewHolder();
-            viewHolder.ec_tv_title = (TextView) rowView.findViewById(R.id.tvTitle);
+            viewHolder.ec_tv_title = (TextView) rowView.findViewById(R.id.tvTitleFavorite);
 
             rowView.setTag(viewHolder);
         }

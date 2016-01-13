@@ -3,27 +3,23 @@ package com.zamigos.espacedali;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import de.keyboardsurfer.android.widget.crouton.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.Console;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class DetailActivity extends MainActivity {
 
@@ -76,6 +72,7 @@ public class DetailActivity extends MainActivity {
 
                 Integer arrayFav[];
                 JSONArray jsonFav = new JSONArray();
+                boolean add = true;
 
                 if (!strFavorites.isEmpty()) {
                     try {
@@ -85,7 +82,25 @@ public class DetailActivity extends MainActivity {
                     }
                 }
 
-                jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
+                RelativeLayout toolBar = (RelativeLayout) findViewById(R.id.detail_layout);
+
+                for(int i = 0; i < jsonFav.length(); i++){
+                    try {
+                        if (jsonFav.getInt(i) == Integer.parseInt(preferences.getString("idOeuvre", ""))) {
+
+                            Crouton.showText(DetailActivity.this, "Cette oeuvre est déjà présente dans vos favoris.", Style.INFO, toolBar);
+
+                            add = false;
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                if (add) {
+                    Crouton.showText(DetailActivity.this, "L'oeuvre a bien était ajoutée à vos favoris.", Style.INFO, toolBar);
+                    jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
+                }
                 preferences.edit().putString("favorites", jsonFav.toString()).commit();
             }
         });
