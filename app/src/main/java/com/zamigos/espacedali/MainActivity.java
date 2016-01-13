@@ -1,5 +1,6 @@
 package com.zamigos.espacedali;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -88,9 +89,13 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            finishAffinity();
+            startActivity(intent);
         } else if (id == R.id.nav_theme) {
-
+            Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_plan ) {
 
         } else if (id == R.id.nav_favorite) {
