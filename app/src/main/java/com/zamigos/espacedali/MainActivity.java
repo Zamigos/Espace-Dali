@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button btnOeuvre;
+    private Button btnPlan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,16 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         btnOeuvre = (Button) findViewById(R.id.btnOeuvre);
+        btnPlan = (Button) findViewById(R.id.btnPlan);
 
+        btnPlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PlanActivity.class);
+                startActivity(intent);
+                setContentView(R.layout.activity_plan);
+            }
+        });
         btnOeuvre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
