@@ -8,10 +8,10 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:id="@+id/ivImage"
-        android:maxHeight="240dp"
-        android:minHeight="240dp" />
+        android:longClickable="false"
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,24 +19,26 @@
         android:layout_height="220dp"
         android:padding="20dp">
 
+        <ImageButton
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/ibFavori"
+            android:src="@drawable/ic_menu_favorite_detail"
+            android:layout_gravity="right"
+            android:background="#00ffffff" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tvTitle"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:text="Title Oeuvre" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <ImageButton
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:id="@+id/ibFavori"
-                android:src="@drawable/ic_menu_favorite_detail"
-                android:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,20 +46,21 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/tvDate"
                 android:textStyle="bold"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:text="01/01/1970" />
 
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/tvDescription" />
+            android:id="@+id/tvDescription"
+            android:text="Description of the oeuvre." />
 
     </LinearLayout>
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Comments (5)"
         android:id="@+id/btnComments"

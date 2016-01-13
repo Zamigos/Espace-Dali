@@ -56,7 +56,7 @@ public class DetailActivity extends MainActivity {
         Oeuvre oeuvre = ChargementOeuvre.findOeuvreById(idOeuvre);
 
         tvTitle.setText(oeuvre.getTitle());
-        tvDate.setText(Integer.toString(oeuvre.getDate()));
+        tvDate.setText(oeuvre.getDate());
         tvDescription.setText(oeuvre.getDescription());
 
         Picasso.with(this).load(oeuvre.getImage()).into(ivImage);
