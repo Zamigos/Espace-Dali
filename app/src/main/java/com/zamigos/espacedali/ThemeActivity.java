@@ -1,6 +1,8 @@
 package com.zamigos.espacedali;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,7 +41,10 @@ public class ThemeActivity extends MainActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ThemeActivity.this, OeuvreActivity.class);
-                intent.putExtra("idTheme", ((TextView) view.findViewById(R.id.tvHidden)).getText().toString());
+
+                SharedPreferences preferences = getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
+                preferences.edit().putString("idTheme", ((TextView) view.findViewById(R.id.tvHidden)).getText().toString()).commit();
+
                 startActivity(intent);
             }
         });

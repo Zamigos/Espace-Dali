@@ -1,6 +1,8 @@
 package com.zamigos.espacedali;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,6 +21,7 @@ public class OeuvreActivity extends MainActivity {
 
     private GridView gvOeuvre;
     private ImageView imgOeuvreGrid;
+    private TextView tvHiddenOeuvre;
     private ArrayList<Oeuvre> oeuvreArrayList;
     private OeuvreAdpater oeuvreAdapter;
     private InitOeuvre initOeuvre;
@@ -28,14 +32,15 @@ public class OeuvreActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_oeuvre);
 
+        SharedPreferences preferences = getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
 
-        Log.v("WARNING", "test1=" + idTheme);
-        if(getIntent().getExtras()!=null) {
-            idTheme = Integer.parseInt(getIntent().getExtras().getString("idTheme"));
+        if(preferences.getAll()!=null) {
+            idTheme = Integer.parseInt(preferences.getString("idTheme", ""));
         }
 
         gvOeuvre = (GridView) findViewById(R.id.gvOeuvre);
         imgOeuvreGrid = (ImageView) findViewById(R.id.imgOeuvreGrid);
+        tvHiddenOeuvre = (TextView) findViewById(R.id.tvHiddenOeuvre);
         oeuvreArrayList = new ArrayList<>();
 
         oeuvreAdapter = new OeuvreAdpater(this, oeuvreArrayList);
@@ -47,7 +52,10 @@ public class OeuvreActivity extends MainActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(OeuvreActivity.this, DetailActivity.class);
-                intent.putExtra("idTheme", ((TextView) view.findViewById(R.id.tvHiddenOeuvre)).getText().toString());
+
+                SharedPreferences preferences = getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
+                preferences.edit().putString("idOeuvre", ((TextView) view.findViewById(R.id.tvHiddenOeuvre)).getText().toString()).commit();
+
                 startActivity(intent);
             }
         });

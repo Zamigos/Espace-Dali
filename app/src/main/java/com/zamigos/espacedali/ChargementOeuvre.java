@@ -31,10 +31,14 @@ public class ChargementOeuvre {
         return oeuvres;
     }
 
+    public static ArrayList<Oeuvre> getFavorite(){
+        ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();
+        return oeuvres;
+    }
+
     public ArrayList<Oeuvre> findOeuvreByTheme(int idTheme){
         ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();
         ArrayList<Oeuvre> result = new ArrayList<>();
-        Log.v("WARNING", "index=" + idTheme);
         for (Oeuvre o : oeuvres) {
             if(o.getIdTheme() == idTheme){
                 result.add(o);

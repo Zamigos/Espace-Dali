@@ -1,5 +1,6 @@
 package com.zamigos.espacedali;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewStub;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,7 +51,6 @@ public class MainActivity extends AppCompatActivity
         this.finish();
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -81,7 +82,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-            finishAffinity();
             startActivity(intent);
         } else if (id == R.id.nav_theme) {
             Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
@@ -89,7 +89,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_plan ) {
 
         } else if (id == R.id.nav_favorite) {
-
+            Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_info) {
 
         } else if (id == R.id.nav_map) {
