@@ -51,7 +51,7 @@ public class ThemeActivity extends MainActivity {
 
         @Override
         protected Object doInBackground(Object[] params) {
-            result = ChargementTheme.getTheme();
+            result = ChargementTheme.getTheme(getApplicationContext());
             return null;
         }
 
