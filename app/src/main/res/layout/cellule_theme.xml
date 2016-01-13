@@ -10,19 +10,25 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:id="@+id/imgTheme"
             android:adjustViewBounds="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="Theme title"
             android:id="@+id/tvTheme"
-            android:background="#c8000000"
-            android:textColor="#ffffff"
-            android:layout_centerInParent="true"/>
+            android:background="#ffffff"
+            android:textColor="#3a3a3a"
+            android:layout_centerInParent="true"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:textSize="17dp" />
 
         <TextView
             android:layout_width="wrap_content"
