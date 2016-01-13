@@ -6,71 +6,86 @@
     android:orientation="vertical"
     tools:context="com.zamigos.espacedali.DetailActivity">
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:id="@+id/ivImage"
-        android:longClickable="false"
-        android:scaleType="centerCrop" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp">
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/ivImage"
+                android:longClickable="false"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:id="@+id/tvTitle"
-                android:layout_marginRight="20dp"
-                android:text="Title Oeuvre"
-                android:paddingBottom="0dp"
-                android:layout_weight="20" />
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
-            <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:id="@+id/ibFavori"
-                android:src="@drawable/ic_menu_favorite_detail"
-                android:layout_gravity="right"
-                android:background="#00ffffff"
-                android:layout_weight="0"
-                android:paddingTop="4dp" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/tvTitle"
+                        android:layout_marginRight="20dp"
+                        android:text="Title Oeuvre"
+                        android:paddingBottom="0dp"
+                        android:layout_weight="20" />
+
+                    <ImageButton
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:id="@+id/ibFavori"
+                        android:src="@drawable/ic_menu_favorite_detail"
+                        android:layout_gravity="right"
+                        android:background="#00ffffff"
+                        android:layout_weight="0"
+                        android:paddingTop="4dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/tvDate"
+                    android:text="01/01/1970"
+                    android:textStyle="italic"
+                    android:paddingBottom="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvDescription"
+                    android:text="Description of the oeuvre." />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comments"
+                android:id="@+id/btnComments"
+                android:paddingTop="0dp"
+                android:background="#cbcbcb"
+                android:layout_marginTop="30dp"
+                android:textColor="#545454" />
         </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/tvDate"
-            android:text="01/01/1970"
-            android:textStyle="italic"
-            android:paddingBottom="15dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvDescription"
-            android:text="Description of the oeuvre." />
-
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Comments (5)"
-        android:id="@+id/btnComments"
-        android:paddingTop="3dp" />
 
 </LinearLayout>
