@@ -9,8 +9,19 @@ public class Comment {
     private String name;
     private String date;
     private String content;
+    private String avatar;
     private int idOeuvre;
     // Avatar ?
+
+    public Comment(int id, String email, String name, String date, String content, int idOeuvre, String avatar) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.date = date;
+        this.content = content;
+        this.idOeuvre = idOeuvre;
+        this.avatar = avatar;
+    }
 
     public Comment(int id, String email, String name, String date, String content, int idOeuvre) {
         this.id = id;
@@ -67,5 +78,13 @@ public class Comment {
 
     public void setIdOeuvre(int idOeuvre) {
         this.idOeuvre = idOeuvre;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
