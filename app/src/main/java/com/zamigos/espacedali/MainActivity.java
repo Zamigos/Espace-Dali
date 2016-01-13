@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    @Override
+   /* @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -51,7 +51,13 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }*/
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
