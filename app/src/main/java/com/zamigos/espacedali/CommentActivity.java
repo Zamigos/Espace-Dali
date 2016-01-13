@@ -1,6 +1,8 @@
 package com.zamigos.espacedali;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class CommentActivity extends AppCompatActivity {
+public class CommentActivity extends MainActivity {
 
     private ArrayList<Comment> commentArrayList;
     private CommentAdpater commentAdpater;
@@ -19,7 +21,7 @@ public class CommentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comments);
+        super.setContentView(R.layout.activity_comments);
 
         lvComment = (ListView) findViewById(R.id.lvComment);
         commentArrayList = new ArrayList<>();

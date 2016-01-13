@@ -1,5 +1,7 @@
 package com.zamigos.espacedali;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -10,19 +12,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.content.Intent;
+import android.view.ViewStub;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private Button btnOeuvre;
-    private Button btnPlan;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        super.setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,36 +34,20 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
-        btnOeuvre = (Button) findViewById(R.id.btnOeuvre);
-        btnPlan = (Button) findViewById(R.id.btnPlan);
+    @Override
+    public void setContentView(int layoutResID) {
 
-        btnPlan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PlanActivity.class);
-                startActivity(intent);
-                setContentView(R.layout.activity_plan);
-            }
-        });
-        btnOeuvre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
-                startActivity(intent);
-                setContentView(R.layout.activity_theme);
-            }
-        });
+        ViewStub stub = (ViewStub) findViewById(R.id.layout_include);
+        stub.setLayoutResource(layoutResID);
+        View inflated = stub.inflate();
+
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        this.finish();
     }
 
     @Override
@@ -95,13 +79,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         } else if (id == R.id.nav_theme) {
-
+            Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_plan ) {
 
         } else if (id == R.id.nav_favorite) {
-
+            Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_info) {
 
         } else if (id == R.id.nav_map) {

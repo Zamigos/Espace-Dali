@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class PlanActivity extends AppCompatActivity {
+public class PlanActivity extends MainActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private final LatLng LOCATION_MUSEUM = new LatLng(48.895575, 2.387731);
@@ -25,7 +25,7 @@ public class PlanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plan);
+        super.setContentView(R.layout.activity_plan);
         setUpMapIfNeeded();
     }
 

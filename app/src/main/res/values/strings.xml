@@ -19,4 +19,10 @@
     <string name="activity_title_comment">Comment</string>
     <string name="activity_title_oeuvre">Oeuvre</string>
     <string name="activity_title_detail">Detail</string>
+
+    <string name="txt_theme_illustration">Illustration</string>
+    <string name="txt_theme_design">Design</string>
+    <string name="txt_theme_cinema">Cinema</string>
+    <string name="txt_theme_paint">Painting</string>
+    <string name="txt_theme_sculpture">Sculpture</string>
 </resources>
