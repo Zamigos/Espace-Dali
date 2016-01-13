@@ -1,6 +1,11 @@
 package com.zamigos.espacedali;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
@@ -31,9 +36,36 @@ public class ChargementOeuvre {
         return oeuvres;
     }
 
-    public static ArrayList<Oeuvre> getFavorite(){
+    public static ArrayList<Oeuvre> getFavorite(SharedPreferences preferences){
+
         ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();
-        return oeuvres;
+        ArrayList<Oeuvre> result = new ArrayList<>();
+        String strFavorites = preferences.getString("favorites", "");
+
+        Integer arrayFav[];
+        JSONArray jsonFav = new JSONArray();
+
+        if (!strFavorites.isEmpty()) {
+            try {
+                jsonFav = new JSONArray(strFavorites);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for(int i = 0; i < jsonFav.length(); i++){
+            for (Oeuvre o : oeuvres) {
+                try {
+                    if(o.getId() == jsonFav.getInt(i)){
+                        result.add(o);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return result;
     }
 
     public ArrayList<Oeuvre> findOeuvreByTheme(int idTheme){

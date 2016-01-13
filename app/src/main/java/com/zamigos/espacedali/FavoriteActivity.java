@@ -1,6 +1,7 @@
 package com.zamigos.espacedali;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,7 +39,8 @@ public class FavoriteActivity extends MainActivity {
 
         @Override
         protected Object doInBackground(Object[] params) {
-            result = ChargementOeuvre.getFavorite();
+            SharedPreferences preferences = getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
+            result = ChargementOeuvre.getFavorite(preferences);
             return null;
         }
 

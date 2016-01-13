@@ -20,13 +20,8 @@ public class HomeActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.content_main);
 
-
         SharedPreferences preferences = getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
-
-        if(preferences.getString("favorites", "")!=null) {
-            Log.v("FAV =================>", preferences.getString("favorites", ""));
-        }
-
+        preferences.edit().putString("favorites", "").commit();
 
         btnOeuvre = (Button) findViewById(R.id.btnOeuvre);
 

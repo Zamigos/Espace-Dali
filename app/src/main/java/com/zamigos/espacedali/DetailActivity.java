@@ -3,27 +3,17 @@ package com.zamigos.espacedali;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.Console;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DetailActivity extends MainActivity {
 
@@ -76,6 +66,7 @@ public class DetailActivity extends MainActivity {
 
                 Integer arrayFav[];
                 JSONArray jsonFav = new JSONArray();
+                boolean add = true;
 
                 if (!strFavorites.isEmpty()) {
                     try {
@@ -85,7 +76,19 @@ public class DetailActivity extends MainActivity {
                     }
                 }
 
-                jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
+                for(int i = 0; i < jsonFav.length(); i++){
+                    try {
+                        if (jsonFav.getInt(i) == Integer.parseInt(preferences.getString("idOeuvre", ""))) {
+                            add = false;
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                if (add) {
+                    jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
+                }
                 preferences.edit().putString("favorites", jsonFav.toString()).commit();
             }
         });
