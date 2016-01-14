@@ -79,8 +79,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_theme) {
             Intent intent = new Intent(MainActivity.this, ThemeActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_plan ) {
-
+        } else if (id == R.id.nav_plan) {
+            Intent intent = new Intent(MainActivity.this, PlanActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_favorite) {
             Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
             startActivity(intent);
