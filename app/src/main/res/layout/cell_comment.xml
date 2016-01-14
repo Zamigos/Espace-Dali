@@ -24,7 +24,9 @@
             android:text="Name"
             android:id="@+id/tvName"
             android:textStyle="bold"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="11dp"
+            android:textColor="#a8a8a8" />
 
     </LinearLayout>
 
@@ -40,7 +42,8 @@
             android:text="Date"
             android:id="@+id/tvDate"
             android:textSize="7dp"
-            android:layout_gravity="right" />
+            android:layout_gravity="right"
+            android:textColor="#949494" />
 
         <TextView
             android:layout_width="match_parent"

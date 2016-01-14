@@ -97,7 +97,6 @@ public class DetailActivity extends MainActivity {
                         }
                     }
                     preferences.edit().putString("favorites", jsonFav.toString()).commit();Crouton.showText(DetailActivity.this, "L'oeuvre a bien été retirée de vos favoris.", Style.ALERT, toolBar);
-
                     btnFavoris.setImageResource(R.drawable.ic_menu_favorite_detail);
                 } else {
                     jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
