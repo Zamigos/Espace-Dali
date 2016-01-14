@@ -9,14 +9,11 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:id="@+id/ivImageFavorite"
-            android:minHeight="40dp"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:minWidth="40dp"
-            android:src="@drawable/avatar" />
+            android:src="@drawable/avatar"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,7 +39,8 @@
             android:id="@+id/ibDeleteFavorite"
             android:longClickable="true"
             android:src="@drawable/ic_close"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:background="#EEEEEE" />
 
     </LinearLayout>
 
