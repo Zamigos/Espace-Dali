@@ -28,8 +28,7 @@ public class InfoActivity extends MainActivity {
         super.setContentView(R.layout.activity_info);
         setUpMapIfNeeded();
 
-        tvInfo = (TextView) findViewById(R.id.tvInfo);
-        tvInfo.setText("Espace Dalí  à Montmartre, la seule exposition permanente en France entièrement consacrée à Salvador Dalí, le Maître du surréalisme.");
+
     }
 
     @Override
@@ -75,11 +74,12 @@ public class InfoActivity extends MainActivity {
     private void setUpMap() {
         mMap.setMyLocationEnabled(true);
 
-        addMarker(mMap, 48.886562, 2.339783, "Espace Dalí Paris", "Horaires:\nLundi: 10h-18h\nMardi: 10h-18h\nJeudi: 10h-18h\nVendredi: 10h-18h\nSamedi: 10h-18h\nDimanche: 10h-18h\n");
+        addMarker(mMap, 48.886562, 2.339783, "Espace Dalí Paris", "Horaires:\n\nLundi: 10h-18h\nMardi: 10h-18h\nJeudi: 10h-18h\nVendredi: 10h-18h\nSamedi: 10h-18h\nDimanche: 10h-18h");
+
 
         mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
 
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION_MUSEUM, 16);
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(new LatLng(48.888817, 2.339837), 16);
         mMap.animateCamera(update);
     }
 

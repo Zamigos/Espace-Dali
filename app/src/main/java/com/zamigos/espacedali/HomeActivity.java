@@ -35,6 +35,7 @@ public class HomeActivity extends MainActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     @Override

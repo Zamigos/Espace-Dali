@@ -27,7 +27,7 @@ public class CommentActivity extends MainActivity {
         commentArrayList = new ArrayList<>();
 
         LayoutInflater mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        commentAdpater = new CommentAdpater(mInflater, commentArrayList);
+        commentAdpater = new CommentAdpater(getBaseContext(), mInflater, commentArrayList);
 
         lvComment.setAdapter(commentAdpater);
 

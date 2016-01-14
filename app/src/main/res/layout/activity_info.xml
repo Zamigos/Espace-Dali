@@ -8,7 +8,54 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#f8f8f8">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="130dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Musée Espace Dalí Paris"
+                    android:id="@+id/tvTitleInfo"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#5a5a5a"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tvInfo"
+                    android:text="Espace Dalí à Montmartre, la seule exposition permanente en France entièrement consacrée à Salvador Dalí, le Maître du surréalisme."
+                    android:textColor="#a3a3a3"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textAlignment="center"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="18dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="bottom"
+                    android:background="#c5c5c5"></LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
         <fragment
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,34 +64,6 @@
             android:id="@+id/mapInfo"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_weight="6" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollView"
-            android:layout_weight="1"
-            android:paddingTop="10dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Musée Espace Dalí Paris"
-                    android:id="@+id/tvTitleInfo"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/tvInfo" />
-
-            </LinearLayout>
-        </ScrollView>
 
     </LinearLayout>
 
