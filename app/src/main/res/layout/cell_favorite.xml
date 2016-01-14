@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="15dp">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -12,7 +11,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ivAvatar"
+            android:id="@+id/ivImageFavorite"
             android:minHeight="40dp"
             android:maxWidth="40dp"
             android:maxHeight="40dp"
@@ -26,8 +25,25 @@
             android:id="@+id/tvTitleFavorite"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
-            android:textSize="18dp"
-            android:layout_gravity="center_vertical" />
+            android:textSize="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHiddenIdOeuvreFavorite"
+            android:singleLine="false"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/ibDeleteFavorite"
+            android:longClickable="true"
+            android:src="@drawable/ic_close"
+            android:layout_gravity="center"/>
+
     </LinearLayout>
 
 </LinearLayout>

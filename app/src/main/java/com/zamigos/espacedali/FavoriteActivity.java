@@ -1,20 +1,31 @@
 package com.zamigos.espacedali;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class FavoriteActivity extends MainActivity {
     private ArrayList<Oeuvre> favoriteArrayList;
     private FavoriteAdpater favoriteAdpater;
-    private ListView lvFavorite;
     private InitFavorite initFavorite;
+
+    private ListView lvFavorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +36,13 @@ public class FavoriteActivity extends MainActivity {
         favoriteArrayList = new ArrayList<>();
 
         LayoutInflater mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        favoriteAdpater = new FavoriteAdpater(mInflater, favoriteArrayList);
+        favoriteAdpater = new FavoriteAdpater(mInflater, favoriteArrayList, this);
 
         lvFavorite.setAdapter(favoriteAdpater);
 
         initFavorite = new InitFavorite();
         initFavorite.execute();
+
     }
 
     public class InitFavorite extends AsyncTask {
