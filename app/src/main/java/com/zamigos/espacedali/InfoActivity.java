@@ -74,7 +74,7 @@ public class InfoActivity extends MainActivity {
     private void setUpMap() {
         mMap.setMyLocationEnabled(true);
 
-        addMarker(mMap, 48.886562, 2.339783, "Espace Dalí Paris", "Horaires:\nLundi: 10h-18h\nMardi: 10h-18h\nJeudi: 10h-18h\nVendredi: 10h-18h\nSamedi: 10h-18h\nDimanche: 10h-18h\n");
+        addMarker(mMap, 48.886562, 2.339783, "Espace Dalí Paris", "Horaires:\n\nLundi: 10h-18h\nMardi: 10h-18h\nJeudi: 10h-18h\nVendredi: 10h-18h\nSamedi: 10h-18h\nDimanche: 10h-18h");
 
         mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
 
