@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/logo_daliparis" />
+        android:src="@drawable/logo_daliparis"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -21,5 +22,11 @@
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:text="www.daliparis.com" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:src="@drawable/spinning_loader"
+        android:layout_below="@+id/imgLogo" />
 
 </RelativeLayout>
