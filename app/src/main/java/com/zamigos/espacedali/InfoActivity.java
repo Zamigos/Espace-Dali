@@ -76,9 +76,10 @@ public class InfoActivity extends MainActivity {
 
         addMarker(mMap, 48.886562, 2.339783, "Espace Dalí Paris", "Horaires:\n\nLundi: 10h-18h\nMardi: 10h-18h\nJeudi: 10h-18h\nVendredi: 10h-18h\nSamedi: 10h-18h\nDimanche: 10h-18h");
 
+
         mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
 
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION_MUSEUM, 16);
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(new LatLng(48.888817, 2.339837), 16);
         mMap.animateCamera(update);
     }
 
