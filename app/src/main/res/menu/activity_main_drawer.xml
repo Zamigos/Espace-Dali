@@ -22,6 +22,10 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_map"
             android:title="@string/nav_gallery" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search"
+            android:title="@string/nav_search" />
     </group>
 
     <item android:title="@string/nav_subtitle_info">
