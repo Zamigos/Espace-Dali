@@ -26,7 +26,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Musée Espace Dalí Paris"
+                    android:text="@string/info_page_title"
                     android:id="@+id/tvTitleInfo"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/tvInfo"
-                    android:text="Espace Dalí à Montmartre, la seule exposition permanente en France entièrement consacrée à Salvador Dalí, le Maître du surréalisme."
+                    android:text="@string/description_info_page"
                     android:textColor="#a3a3a3"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"

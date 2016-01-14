@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dalí comme vous ne l&apos;avez jamais vu !"
+        android:text="@string/description_home"
         android:id="@+id/textView"
         android:textSize="18dp"
         android:layout_below="@+id/imageView"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Le plan"
+            android:text="@string/home_btn_plan"
             android:background="#686868"
             android:textColor="#ffffff" />
 
