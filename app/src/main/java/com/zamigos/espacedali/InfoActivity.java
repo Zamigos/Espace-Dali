@@ -28,8 +28,7 @@ public class InfoActivity extends MainActivity {
         super.setContentView(R.layout.activity_info);
         setUpMapIfNeeded();
 
-        tvInfo = (TextView) findViewById(R.id.tvInfo);
-        tvInfo.setText("Espace Dalí  à Montmartre, la seule exposition permanente en France entièrement consacrée à Salvador Dalí, le Maître du surréalisme.");
+
     }
 
     @Override
