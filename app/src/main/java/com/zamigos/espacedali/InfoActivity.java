@@ -5,33 +5,31 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class PlanActivity extends MainActivity {
+public class InfoActivity extends MainActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
-    private final LatLng LOCATION_MUSEUM = new LatLng(48.895575, 2.387731);
-
+    private final LatLng LOCATION_MUSEUM = new LatLng(48.886562, 2.339783);
+    private TextView tvInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setContentView(R.layout.activity_plan);
+        super.setContentView(R.layout.activity_info);
         setUpMapIfNeeded();
 
-
+        tvInfo = (TextView) findViewById(R.id.tvInfo);
+        tvInfo.setText("Espace Dalí  à Montmartre, la seule exposition permanente en France entièrement consacrée à Salvador Dalí, le Maître du surréalisme.");
     }
 
     @Override
@@ -59,7 +57,7 @@ public class PlanActivity extends MainActivity {
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
+            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapInfo))
                     .getMap();
             // Check if we were successful in obtaining the map.
             if (mMap != null) {
@@ -77,42 +75,11 @@ public class PlanActivity extends MainActivity {
     private void setUpMap() {
         mMap.setMyLocationEnabled(true);
 
-        addMarker(mMap, 48.895370, 2.386543, "Salle des sculptures", "Le Profil du temp\nL'éléphant spatial\nNewton surréaliste\nLa Femme du temps\nLady Godiva aux papillons");
-        addMarker(mMap, 48.895737, 2.387292, "Salle des peintures", "La persistance de la mémoire\nCygnes réfléchis en éléphants\nLes éléphants\nLe sommeil\nMétamorphose de Narcisse");
-        addMarker(mMap, 48.896101, 2.387986, "Salle  des tableaux","");
-        addMarker(mMap, 48.894917, 2.387496, "Salle des films","");
-        addMarker(mMap, 48.895482, 2.388727, "Salle des illustrations","");
+        addMarker(mMap, 48.886562, 2.339783, "Espace Dalí Paris", "Horaires:\nLundi: 10h-18h\nMardi: 10h-18h\nJeudi: 10h-18h\nVendredi: 10h-18h\nSamedi: 10h-18h\nDimanche: 10h-18h\n");
 
         mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
 
-        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                Log.v("TEST", "test");
-                SharedPreferences preferences = getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
-                switch (marker.getTitle()){
-                    case "Salle des sculptures":
-                        preferences.edit().putString("idTheme", "1").commit();
-                        break;
-                    case "Salle des peintures":
-                        preferences.edit().putString("idTheme", "2").commit();
-                        break;
-                    case "Salle  des tableaux":
-                        preferences.edit().putString("idTheme", "3").commit();
-                        break;
-                    case "Salle des filmsx":
-                        preferences.edit().putString("idTheme", "4").commit();
-                        break;
-                    case "Salle des illustrations":
-                        preferences.edit().putString("idTheme", "5").commit();
-                        break;
-                }
-                Intent intent = new Intent(PlanActivity.this, OeuvreActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION_MUSEUM, 17);
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(LOCATION_MUSEUM, 16);
         mMap.animateCamera(update);
     }
 
@@ -120,6 +87,6 @@ public class PlanActivity extends MainActivity {
                            String title, String snippet) {
         map.addMarker(new MarkerOptions().position(new LatLng(lat, lon))
                 .title(title)
-                .snippet(snippet));
+                .snippet(snippet)).showInfoWindow();
     }
 }

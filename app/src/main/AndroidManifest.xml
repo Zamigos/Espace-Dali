@@ -30,7 +30,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_main"
@@ -41,30 +40,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CommentActivity"
-            android:parentActivityName=".DetailActivity"
-            android:label="@string/activity_title_comment"/>
+            android:label="@string/activity_title_comment"
+            android:parentActivityName=".DetailActivity" />
         <activity
             android:name=".ThemeActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/activity_title_theme"/>
+            android:label="@string/activity_title_theme"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".OeuvreActivity"
-            android:parentActivityName=".ThemeActivity"
-            android:label="@string/activity_title_oeuvre"/>
+            android:label="@string/activity_title_oeuvre"
+            android:parentActivityName=".ThemeActivity" />
         <activity
             android:name=".DetailActivity"
-            android:parentActivityName=".OeuvreActivity"
-            android:label="@string/activity_title_detail"/>
+            android:label="@string/activity_title_detail"
+            android:parentActivityName=".OeuvreActivity" />
         <activity android:name=".FavoriteActivity" />
-        <activity android:name=".PlanActivity"/>
+        <activity android:name=".PlanActivity" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyB9VKcFXL_1lc1IsLpLYmsNrN5rg-TOkUA" />
+
+        <activity android:name=".InfoActivity"></activity>
     </application>
+
 </manifest>
