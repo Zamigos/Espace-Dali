@@ -98,7 +98,7 @@ public class DetailActivity extends MainActivity {
                 }
 
                 if (add) {
-                    Crouton.showText(DetailActivity.this, "L'oeuvre a bien était ajoutée à vos favoris.", Style.INFO, toolBar);
+                    Crouton.showText(DetailActivity.this, "L'oeuvre a bien été ajoutée à vos favoris.", Style.INFO, toolBar);
                     jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
                 }
                 preferences.edit().putString("favorites", jsonFav.toString()).commit();

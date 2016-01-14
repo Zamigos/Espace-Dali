@@ -1,5 +1,6 @@
 package com.zamigos.espacedali;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,8 +20,9 @@ public class CommentAdpater extends BaseAdapter {
 
     private LayoutInflater layoutInflater;
     private List<Comment> eleveList;
+    private Context context;
 
-    public CommentAdpater(LayoutInflater mInflater, List<Comment> eleveList) {
+    public CommentAdpater(Context context, LayoutInflater mInflater, List<Comment> eleveList) {
         this.layoutInflater = mInflater;
         this.eleveList = eleveList;
     }
@@ -48,10 +50,10 @@ public class CommentAdpater extends BaseAdapter {
             rowView = layoutInflater.inflate(R.layout.cell_comment, null);
 
             viewHolder = new ViewHolder();
-            viewHolder.ec_iv_image = (ImageView) rowView.findViewById(R.id.ivAvatarComment);
             viewHolder.ec_tv_name = (TextView) rowView.findViewById(R.id.tvName);
             viewHolder.ec_tv_content = (TextView) rowView.findViewById(R.id.tvContent);
             viewHolder.ec_tv_date = (TextView) rowView.findViewById(R.id.tvDate);
+            viewHolder.ivAvatar = (ImageView) rowView.findViewById(R.id.ivAvatarComment);
 
             rowView.setTag(viewHolder);
         }
@@ -64,13 +66,14 @@ public class CommentAdpater extends BaseAdapter {
         viewHolder.ec_tv_name.setText(comment.getName());
         viewHolder.ec_tv_content.setText(comment.getContent());
         viewHolder.ec_tv_date.setText(comment.getDate());
-        Picasso.with(rowView.getContext()).load(comment.getAvatar()).into(viewHolder.ec_iv_image);
+
+        Picasso.with(context).load(comment.getAvatar()).into(viewHolder.ivAvatar);
 
         return rowView;
     }
 
     private static class ViewHolder {
         public TextView ec_tv_name, ec_tv_content, ec_tv_date;
-        public ImageView ec_iv_image;
+        public ImageView ivAvatar;
     }
 }

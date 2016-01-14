@@ -11,21 +11,36 @@
 
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="fill_parent"
-            android:id="@+id/imgPopup" />
+            android:layout_height="100dp"
+            android:id="@+id/imgPopup"
+            android:src="@drawable/logo_daliparis"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Title"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#424242" />
 
         <TextView
             android:id="@+id/snippet"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15sp"/>
+            android:textSize="13dp"
+            android:text="Some Information"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#9e9e9e"
+            android:textStyle="italic" />
 
     </LinearLayout>
 
