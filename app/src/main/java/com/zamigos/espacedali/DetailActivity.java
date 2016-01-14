@@ -51,6 +51,10 @@ public class DetailActivity extends MainActivity {
 
         Oeuvre oeuvre = ChargementOeuvre.findOeuvreById(idOeuvre);
 
+        if (ChargementOeuvre.isFavorite(preferences, idOeuvre)) {
+            btnFavoris.setImageResource(R.drawable.ic_menu_favorite_detail_active);
+        }
+
         tvTitle.setText(oeuvre.getTitle());
         tvDate.setText(oeuvre.getDate());
         tvDescription.setText(oeuvre.getDescription());
@@ -70,9 +74,8 @@ public class DetailActivity extends MainActivity {
                 SharedPreferences preferences = getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
                 String strFavorites = preferences.getString("favorites", "");
 
-                Integer arrayFav[];
                 JSONArray jsonFav = new JSONArray();
-                boolean add = true;
+                RelativeLayout toolBar = (RelativeLayout) findViewById(R.id.detail_layout);
 
                 if (!strFavorites.isEmpty()) {
                     try {
@@ -82,26 +85,26 @@ public class DetailActivity extends MainActivity {
                     }
                 }
 
-                RelativeLayout toolBar = (RelativeLayout) findViewById(R.id.detail_layout);
+                if (ChargementOeuvre.isFavorite(preferences, idOeuvre)) {
 
-                for(int i = 0; i < jsonFav.length(); i++){
-                    try {
-                        if (jsonFav.getInt(i) == Integer.parseInt(preferences.getString("idOeuvre", ""))) {
-
-                            Crouton.showText(DetailActivity.this, "Cette oeuvre est déjà présente dans vos favoris.", Style.INFO, toolBar);
-
-                            add = false;
+                    for (int i = 0; i < jsonFav.length(); i++) {
+                        try {
+                            if (jsonFav.getInt(i) == Integer.parseInt(preferences.getString("idOeuvre", ""))) {
+                                jsonFav.remove(i);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
                     }
-                }
+                    preferences.edit().putString("favorites", jsonFav.toString()).commit();Crouton.showText(DetailActivity.this, "L'oeuvre a bien été retirée de vos favoris.", Style.ALERT, toolBar);
 
-                if (add) {
-                    Crouton.showText(DetailActivity.this, "L'oeuvre a bien était ajoutée à vos favoris.", Style.INFO, toolBar);
+                    btnFavoris.setImageResource(R.drawable.ic_menu_favorite_detail);
+                } else {
                     jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
+                    btnFavoris.setImageResource(R.drawable.ic_menu_favorite_detail_active);
+                    preferences.edit().putString("favorites", jsonFav.toString()).commit();
+                    Crouton.showText(DetailActivity.this, "L'oeuvre a bien été ajoutée à vos favoris.", Style.INFO, toolBar);
                 }
-                preferences.edit().putString("favorites", jsonFav.toString()).commit();
             }
         });
     }
