@@ -7,22 +7,37 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.zamigos.espacedali.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    android:background="#ffffff">
 
     <ImageView
-        android:id="@+id/imgApp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView2"
+        android:src="@drawable/dali"
+        android:scaleType="centerCrop" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_daliparis" />
+        android:id="@+id/imageView"
+        android:src="@drawable/logo_daliparis"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
 
     <TextView
-        android:id="@+id/descriptionApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:gravity="center"
-        android:text="Bienvenue au musée Espace-Dali"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="Dalí comme vous ne l&apos;avez jamais vu !"
+        android:id="@+id/textView"
+        android:textSize="18dp"
+        android:layout_below="@+id/imageView"
+        android:textAlignment="center"
+        android:textColor="#434343"
+        android:shadowColor="#ffffff"
+        android:paddingBottom="15dp"
+        android:background="#7dffffff"
+        android:paddingTop="15dp"
+        android:layout_marginTop="120dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,14 +52,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Voir plan" />
+            android:text="Voir plan"
+            android:background="#686868"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/btnOeuvre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Voir œuvres" />
+            android:text="Voir œuvres"
+            android:background="#808080"
+            android:textColor="#ffffff" />
+
     </LinearLayout>
 
 </RelativeLayout>
