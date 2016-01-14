@@ -24,7 +24,8 @@
             android:text="Name"
             android:id="@+id/tvName"
             android:textStyle="bold"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="12dp" />
 
     </LinearLayout>
 
