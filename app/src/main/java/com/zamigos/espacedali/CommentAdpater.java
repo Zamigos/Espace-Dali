@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -45,6 +48,7 @@ public class CommentAdpater extends BaseAdapter {
             rowView = layoutInflater.inflate(R.layout.cell_comment, null);
 
             viewHolder = new ViewHolder();
+            viewHolder.ec_iv_image = (ImageView) rowView.findViewById(R.id.ivAvatarComment);
             viewHolder.ec_tv_name = (TextView) rowView.findViewById(R.id.tvName);
             viewHolder.ec_tv_content = (TextView) rowView.findViewById(R.id.tvContent);
             viewHolder.ec_tv_date = (TextView) rowView.findViewById(R.id.tvDate);
@@ -60,11 +64,13 @@ public class CommentAdpater extends BaseAdapter {
         viewHolder.ec_tv_name.setText(comment.getName());
         viewHolder.ec_tv_content.setText(comment.getContent());
         viewHolder.ec_tv_date.setText(comment.getDate());
+        Picasso.with(rowView.getContext()).load(comment.getAvatar()).into(viewHolder.ec_iv_image);
 
         return rowView;
     }
 
     private static class ViewHolder {
         public TextView ec_tv_name, ec_tv_content, ec_tv_date;
+        public ImageView ec_iv_image;
     }
 }

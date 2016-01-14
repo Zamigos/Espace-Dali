@@ -27,6 +27,7 @@ public class Comment {
         this.id = id;
         this.email = email;
         this.name = name;
+        this.avatar = avatar;
         this.date = date;
         this.content = content;
         this.idOeuvre = idOeuvre;

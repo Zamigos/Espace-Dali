@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/ivAvatar"
+            android:id="@+id/ivAvatarComment"
             android:src="@drawable/avatar"
             android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal" />
