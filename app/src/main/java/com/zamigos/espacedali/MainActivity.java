@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity
             images.add("http://sourcey.com/images/stock/salvador-dali-metamorphosis-of-narcissus.jpg");
             images.add("http://sourcey.com/images/stock/salvador-dali-the-dream.jpg");
             images.add("http://sourcey.com/images/stock/salvador-dali-persistence-of-memory.jpg");
+            images.add("http://sourcey.com/images/stock/simpsons-persistance-of-memory.jpg");
             images.add("http://sourcey.com/images/stock/salvador-dali-the-great-masturbator.jpg");
             Intent intent = new Intent(MainActivity.this, GalleryActivity.class);
             intent.putStringArrayListExtra(GalleryActivity.EXTRA_NAME, images);
