@@ -96,13 +96,13 @@ public class DetailActivity extends MainActivity {
                             e.printStackTrace();
                         }
                     }
-                    preferences.edit().putString("favorites", jsonFav.toString()).commit();Crouton.showText(DetailActivity.this, "L'oeuvre a bien été retirée de vos favoris.", Style.ALERT, toolBar);
+                    preferences.edit().putString("favorites", jsonFav.toString()).commit();Crouton.showText(DetailActivity.this, "L'oeuvre a été retirée de vos favoris.", Style.ALERT, toolBar);
                     btnFavoris.setImageResource(R.drawable.ic_menu_favorite_detail);
                 } else {
                     jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));
                     btnFavoris.setImageResource(R.drawable.ic_menu_favorite_detail_active);
                     preferences.edit().putString("favorites", jsonFav.toString()).commit();
-                    Crouton.showText(DetailActivity.this, "L'oeuvre a bien été ajoutée à vos favoris.", Style.INFO, toolBar);
+                    Crouton.showText(DetailActivity.this, "L'oeuvre a été ajoutée à vos favoris.", Style.INFO, toolBar);
                 }
             }
         });
