@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewStub;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -90,11 +92,17 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_favorite) {
             Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_gallery) {
+            ArrayList<String> images = new ArrayList<String>();
+            images.add("http://sourcey.com/images/stock/salvador-dali-metamorphosis-of-narcissus.jpg");
+            images.add("http://sourcey.com/images/stock/salvador-dali-the-dream.jpg");
+            images.add("http://sourcey.com/images/stock/salvador-dali-persistence-of-memory.jpg");
+            images.add("http://sourcey.com/images/stock/salvador-dali-the-great-masturbator.jpg");
+            Intent intent = new Intent(MainActivity.this, GalleryActivity.class);
+            intent.putStringArrayListExtra(GalleryActivity.EXTRA_NAME, images);
+                startActivity(intent);
         } else if (id == R.id.nav_info) {
             Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_map) {
-            Intent intent = new Intent(getApplicationContext(), PlanActivity.class);
             startActivity(intent);
         }
 

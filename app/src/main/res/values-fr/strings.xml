@@ -10,6 +10,7 @@
     <string name="nav_theme">Theme</string>
     <string name="nav_visite_plan">Visite Plan</string>
     <string name="nav_favorite">Favorite</string>
+    <string name="nav_gallery">Galerie</string>
     <string name="nav_subtitle_info">Practical Information</string>
     <string name="nav_information">Information</string>
     <string name="nav_map_info">Map</string>

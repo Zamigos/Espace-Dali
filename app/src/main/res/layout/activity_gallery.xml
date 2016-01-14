@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:fitsSystemWindows="true"
+    tools:context="com.zamigos.espacedali.GalleryActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="72dp">
+    </android.support.v4.view.ViewPager>
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top|right"
+        android:scaleType="fitCenter"
+        style="@style/Widget.AppCompat.ActionButton" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:background="#000">
+        <LinearLayout
+            android:id="@+id/thumbnails"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"/>
+    </HorizontalScrollView>
+</FrameLayout>
