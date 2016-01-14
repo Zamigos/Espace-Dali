@@ -35,4 +35,8 @@
     <string name="description_info_page">Dalí Space in Montmartre, the only permanent exposition in France totally dedicated to Salvador Dalí, the master of surrealism.</string>
     <string name="message_add_in_favorite">Artwork is added to your favories.</string>
     <string name="message_remove_favori">Artwork is removed from your favories.</string>
+    <string name="activity_information">Information</string>
+    <string name="activity_gallery">Gallery</string>
+    <string name="activity_plan">Visit Plan</string>
+    <string name="activity_favorite">Favorite</string>
 </resources>

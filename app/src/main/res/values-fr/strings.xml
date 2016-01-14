@@ -34,5 +34,9 @@
     <string name="description_info_page">Espace Dalí à Montmartre, la seule exposition permanente en France entièrement consacrée à Salvador Dalí, le Maître du surréalisme.</string>
     <string name="message_add_in_favorite">L\'oeuvre a bien été ajoutée à vos favoris.</string>
     <string name="message_remove_favori">L\'oeuvre a bien été retirée de vos favoris.</string>
+    <string name="activity_information">Information</string>
+    <string name="activity_gallery">Gallerie</string>
+    <string name="activity_plan">Plan visite</string>
+    <string name="activity_favorite">Favoris</string>
 
 </resources>
