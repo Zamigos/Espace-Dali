@@ -51,6 +51,35 @@ public class ChargementOeuvre {
         return oeuvres;
     }
 
+    public static boolean isFavorite(SharedPreferences preferences, Integer idOeuvre) {
+        String strFavorites = preferences.getString("favorites", "");
+
+        Integer arrayFav[];
+        JSONArray jsonFav = new JSONArray();
+
+        if (!strFavorites.isEmpty()) {
+            try {
+                jsonFav = new JSONArray(strFavorites);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            return false;
+        }
+
+        for(int i = 0; i < jsonFav.length(); i++){
+            try {
+                if(idOeuvre == jsonFav.getInt(i)){
+                    return true;
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return false;
+    }
+
     public static ArrayList<Oeuvre> getFavorite(SharedPreferences preferences){
 
         ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();

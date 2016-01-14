@@ -25,4 +25,5 @@
     <string name="txt_theme_cinema">Cinema</string>
     <string name="txt_theme_paint">Paint</string>
     <string name="txt_theme_sculpture">Sculpture</string>
+    <string name="btnHomeOeuvre">Les œuvres</string>
 </resources>

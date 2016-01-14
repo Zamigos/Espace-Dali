@@ -19,6 +19,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
 public class PlanActivity extends MainActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
@@ -77,11 +81,39 @@ public class PlanActivity extends MainActivity {
     private void setUpMap() {
         mMap.setMyLocationEnabled(true);
 
-        addMarker(mMap, 48.895370, 2.386543, "Salle des sculptures", "Le Profil du temp\nL'éléphant spatial\nNewton surréaliste\nLa Femme du temps\nLady Godiva aux papillons");
-        addMarker(mMap, 48.895737, 2.387292, "Salle des peintures", "La persistance de la mémoire\nCygnes réfléchis en éléphants\nLes éléphants\nLe sommeil\nMétamorphose de Narcisse");
-        addMarker(mMap, 48.896101, 2.387986, "Salle  des tableaux","");
-        addMarker(mMap, 48.894917, 2.387496, "Salle des films","");
-        addMarker(mMap, 48.895482, 2.388727, "Salle des illustrations","");
+        ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();
+
+        String str1 = "";
+        String str2 = "";
+        String str3 = "";
+        String str4 = "";
+        String str5 = "";
+
+        for (Oeuvre o : oeuvres) {
+            switch (o.getIdTheme()) {
+                case 1:
+                    str1 += o.getTitle() + "\n";
+                    break;
+                case 2 :
+                    str2 += o.getTitle() + "\n";
+                    break;
+                case 3 :
+                    str3 += o.getTitle() + "\n";
+                    break;
+                case 4 :
+                    str4 += o.getTitle() + "\n";
+                    break;
+                case 5 :
+                    str5 += o.getTitle() + "\n";
+                    break;
+            }
+        }
+
+        addMarker(mMap, 48.895370, 2.386543, "Salle des sculptures", str1);
+        addMarker(mMap, 48.895737, 2.387292, "Salle des peintures", str2);
+        addMarker(mMap, 48.896101, 2.387986, "Salle  des tableaux",str3);
+        addMarker(mMap, 48.894917, 2.387496, "Salle des films",str4);
+        addMarker(mMap, 48.895482, 2.388727, "Salle des illustrations",str5);
 
         mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
 
