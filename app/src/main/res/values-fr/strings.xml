@@ -1,29 +1,42 @@
 <resources>
     <string name="app_name">Espace Dali</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Accueil</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Ouvrir la navigation</string>
+    <string name="navigation_drawer_close">Fermer la navigation</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="nav_home">Home</string>
-    <string name="nav_theme">Theme</string>
-    <string name="nav_visite_plan">Visite Plan</string>
-    <string name="nav_favorite">Favorite</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="nav_home">Accueil</string>
+    <string name="nav_theme">Thèmes</string>
+    <string name="nav_visite_plan">Plan Visite</string>
+    <string name="nav_favorite">Favoris</string>
     <string name="nav_gallery">Galerie</string>
-    <string name="nav_subtitle_info">Practical Information</string>
-    <string name="nav_information">Information</string>
-    <string name="nav_map_info">Map</string>
+    <string name="nav_subtitle_info">Informations Pratiques</string>
+    <string name="nav_information">Informations</string>
+    <string name="nav_map_info">Carte</string>
 
-    <string name="nav_header_logo_description">Dali Space</string>
-    <string name="activity_title_theme">Theme</string>
-    <string name="activity_title_comment">Comment</string>
+    <string name="nav_header_logo_description">Espace Dali</string>
+    <string name="activity_title_theme">Thèmes</string>
+    <string name="activity_title_comment">Commentaire</string>
     <string name="activity_title_oeuvre">Oeuvre</string>
-    <string name="activity_title_detail">Detail</string>
+    <string name="activity_title_detail">Détail</string>
     <string name="txt_theme_illustration">Illustration</string>
     <string name="txt_theme_design">Design</string>
-    <string name="txt_theme_cinema">Cinema</string>
-    <string name="txt_theme_paint">Paint</string>
+    <string name="txt_theme_cinema">Cinéma</string>
+    <string name="txt_theme_paint">Peinture</string>
     <string name="txt_theme_sculpture">Sculpture</string>
     <string name="btnHomeOeuvre">Les œuvres</string>
+    <string name="home_btn_plan">Le plan</string>
+    <string name="description_home">Dalí comme vous ne l\'avez jamais vu !</string>
+    <string name="btnComment">Commentaires</string>
+    <string name="btn_send_comment">Envoyer</string>
+    <string name="info_page_title">Musée Espace Dalí Paris</string>
+    <string name="description_info_page">Espace Dalí à Montmartre, la seule exposition permanente en France entièrement consacrée à Salvador Dalí, le Maître du surréalisme.</string>
+    <string name="message_add_in_favorite">L\'oeuvre a bien été ajoutée à vos favoris.</string>
+    <string name="message_remove_favori">L\'oeuvre a bien été retirée de vos favoris.</string>
+    <string name="activity_information">Information</string>
+    <string name="activity_gallery">Gallerie</string>
+    <string name="activity_plan">Plan visite</string>
+    <string name="activity_favorite">Favoris</string>
+
 </resources>
