@@ -18,6 +18,7 @@
     <string name="nav_map_info">Carte</string>
     <string name="nav_search">Rechercher une oeuvre</string>
 
+    <string name="no_favorite">Vous n\'avez aucun favori</string>
     <string name="nav_header_logo_description">Espace Dali</string>
     <string name="activity_title_theme">Thèmes</string>
     <string name="activity_title_comment">Commentaire</string>

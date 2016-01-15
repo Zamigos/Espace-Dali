@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -93,6 +94,11 @@ public class FavoriteActivity extends MainActivity {
                 favoriteArrayList.clear();
                 favoriteArrayList.addAll(result);
                 favoriteAdpater.notifyDataSetChanged();
+            }
+
+            if (result.isEmpty()) {
+                RelativeLayout toolBar = (RelativeLayout) findViewById(R.id.favorite_layout);
+                Crouton.showText(FavoriteActivity.this, getString(R.string.no_favorite), Style.INFO, toolBar);
             }
         }
     }

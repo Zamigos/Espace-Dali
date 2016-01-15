@@ -96,7 +96,8 @@ public class DetailActivity extends MainActivity {
                             e.printStackTrace();
                         }
                     }
-                    preferences.edit().putString("favorites", jsonFav.toString()).commit();Crouton.showText(DetailActivity.this, getString(R.string.message_remove_favori), Style.ALERT, toolBar);
+                    preferences.edit().putString("favorites", jsonFav.toString()).commit();
+                    Crouton.showText(DetailActivity.this, getString(R.string.message_remove_favori), Style.ALERT, toolBar);
                     btnFavoris.setImageResource(R.drawable.ic_menu_favorite_detail);
                 } else {
                     jsonFav.put(Integer.parseInt(preferences.getString("idOeuvre", "")));

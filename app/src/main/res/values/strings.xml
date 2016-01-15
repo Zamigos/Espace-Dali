@@ -2,6 +2,7 @@
     <string name="app_name">Dali Space</string>
     <string name="title_activity_main">Home</string>
 
+    <string name="no_favorite">There is no favorie here :D</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

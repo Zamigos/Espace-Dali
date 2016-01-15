@@ -87,7 +87,6 @@ public class FavoriteAdpater extends BaseAdapter {
                     SharedPreferences preferences = context.getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
                     String strFavorites = preferences.getString("favorites", "");
 
-                    Integer arrayFav[];
                     JSONArray jsonFav = new JSONArray();
                     if (!strFavorites.isEmpty()) {
                         try {
@@ -100,8 +99,8 @@ public class FavoriteAdpater extends BaseAdapter {
                     for (int i = 0; i < jsonFav.length(); i++) {
                         try {
                             if (jsonFav.getInt(i) == Integer.parseInt(viewHolder.ec_tv_id_oeuvre.getText().toString())) {
-                                oeuvreList.remove(i-1);
                                 jsonFav.remove(i);
+                                oeuvreList.remove(i);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

@@ -91,7 +91,6 @@ public class ChargementOeuvre {
         ArrayList<Oeuvre> result = new ArrayList<>();
         String strFavorites = preferences.getString("favorites", "");
 
-        Integer arrayFav[];
         JSONArray jsonFav = new JSONArray();
 
         if (!strFavorites.isEmpty()) {
@@ -101,7 +100,6 @@ public class ChargementOeuvre {
                 e.printStackTrace();
             }
         }
-
         for(int i = 0; i < jsonFav.length(); i++){
             for (Oeuvre o : oeuvres) {
                 try {
