@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            finishAffinity();
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         } else if (id == R.id.nav_theme) {
