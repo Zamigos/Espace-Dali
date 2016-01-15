@@ -138,4 +138,15 @@ public class ChargementOeuvre {
         }
         return null;
     }
+
+    public static ArrayList<Oeuvre> findOeuvreByWord(String key) {
+        ArrayList<Oeuvre> oeuvres = ChargementOeuvre.getOeuvre();
+        ArrayList<Oeuvre> result = new ArrayList<>();
+        for (Oeuvre o : oeuvres) {
+            if (o.getTitle().contains(key)) {
+                result.add(o);
+            }
+        }
+        return result;
+    }
 }

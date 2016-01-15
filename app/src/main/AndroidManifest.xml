@@ -34,8 +34,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CommentActivity"
             android:label="@string/activity_title_comment"
@@ -52,8 +51,12 @@
             android:name=".DetailActivity"
             android:label="@string/activity_title_detail"
             android:parentActivityName=".OeuvreActivity" />
-        <activity android:name=".FavoriteActivity" />
-        <activity android:name=".PlanActivity" />
+        <activity
+            android:name=".FavoriteActivity"
+            android:label="@string/activity_favorite" />
+        <activity
+            android:name=".PlanActivity"
+            android:label="@string/activity_plan" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -62,8 +65,12 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyB9VKcFXL_1lc1IsLpLYmsNrN5rg-TOkUA" />
 
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".GalleryActivity" />
+        <activity
+            android:name=".InfoActivity"
+            android:label="@string/activity_information" />
+        <activity
+            android:name=".GalleryActivity"
+            android:label="@string/activity_gallery" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,6 +78,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>
