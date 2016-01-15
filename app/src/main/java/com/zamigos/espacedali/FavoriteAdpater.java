@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -99,7 +100,7 @@ public class FavoriteAdpater extends BaseAdapter {
                     for (int i = 0; i < jsonFav.length(); i++) {
                         try {
                             if (jsonFav.getInt(i) == Integer.parseInt(viewHolder.ec_tv_id_oeuvre.getText().toString())) {
-                                oeuvreList.remove(i);
+                                oeuvreList.remove(i-1);
                                 jsonFav.remove(i);
                             }
                         } catch (JSONException e) {
@@ -138,6 +139,8 @@ public class FavoriteAdpater extends BaseAdapter {
 
         return rowView;
     }
+
+
 
     private static class ViewHolder {
         public TextView ec_tv_title, ec_tv_id_oeuvre;
