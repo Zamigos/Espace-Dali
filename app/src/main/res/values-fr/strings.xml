@@ -5,6 +5,8 @@
     <string name="navigation_drawer_open">Ouvrir la navigation</string>
     <string name="navigation_drawer_close">Fermer la navigation</string>
 
+    <string name="share_text">Partages avec tes amis</string>
+    <string name="action_share">Partager</string>
     <string name="action_settings">Paramètres</string>
     <string name="nav_home">Accueil</string>
     <string name="nav_theme">Thèmes</string>
