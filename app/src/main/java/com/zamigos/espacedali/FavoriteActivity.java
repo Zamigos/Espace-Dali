@@ -1,12 +1,16 @@
 package com.zamigos.espacedali;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -43,6 +47,32 @@ public class FavoriteActivity extends MainActivity {
         initFavorite = new InitFavorite();
         initFavorite.execute();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.share, menu);
+        MenuItem item = menu.findItem(R.id.menu_item_share);
+        item.setVisible(true);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menu_item_share) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+
+            intent.putExtra(Intent.EXTRA_SUBJECT, "App Name");
+            intent.putExtra(Intent.EXTRA_TEXT, "Check out this cool app http://market.android.com/details?id=com.example.yourpackagename");
+
+            Intent chooser = Intent.createChooser(intent, getString(R.string.share_text));
+            startActivity(chooser);
+        }
+        return true;
     }
 
     public class InitFavorite extends AsyncTask {

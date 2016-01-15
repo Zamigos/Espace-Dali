@@ -1,9 +1,11 @@
 package com.zamigos.espacedali;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.v4.view.ActionProvider;
+import android.support.v4.view.MenuItemCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    private ActionProvider mShareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.share, menu);
+        MenuItem item = menu.findItem(R.id.menu_item_share);
+        item.setVisible(false);
         return true;
     }
 
@@ -79,6 +83,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            finishAffinity();
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         } else if (id == R.id.nav_theme) {
@@ -95,12 +100,16 @@ public class MainActivity extends AppCompatActivity
             images.add("http://sourcey.com/images/stock/salvador-dali-metamorphosis-of-narcissus.jpg");
             images.add("http://sourcey.com/images/stock/salvador-dali-the-dream.jpg");
             images.add("http://sourcey.com/images/stock/salvador-dali-persistence-of-memory.jpg");
+            images.add("http://sourcey.com/images/stock/simpsons-persistance-of-memory.jpg");
             images.add("http://sourcey.com/images/stock/salvador-dali-the-great-masturbator.jpg");
             Intent intent = new Intent(MainActivity.this, GalleryActivity.class);
             intent.putStringArrayListExtra(GalleryActivity.EXTRA_NAME, images);
                 startActivity(intent);
         } else if (id == R.id.nav_info) {
             Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_search) {
+            Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
             startActivity(intent);
         }
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -55,7 +56,11 @@ public class FavoriteAdpater extends BaseAdapter {
 
         final ViewHolder viewHolder;
         if (rowView == null) {
-            rowView = layoutInflater.inflate(R.layout.cell_favorite, null);
+            if(this.layoutInflater.getContext().getClass().toString().contains("SearchActivity")) {
+                rowView = layoutInflater.inflate(R.layout.cell_favorite, null);
+            } else {
+                rowView = layoutInflater.inflate(R.layout.cellule_search, null);
+            }
 
             viewHolder = new ViewHolder();
             viewHolder.ec_iv_image = (ImageView) rowView.findViewById(R.id.ivImageFavorite);
@@ -74,38 +79,39 @@ public class FavoriteAdpater extends BaseAdapter {
         viewHolder.ec_tv_id_oeuvre.setText(oeuvre.getId() + "");
         Picasso.with(rowView.getContext()).load(oeuvre.getImage()).into(viewHolder.ec_iv_image);
 
+        if(!this.layoutInflater.getContext().getClass().toString().contains("SearchActivity")) {
+            btnDeleteFavorite = (ImageButton) rowView.findViewById(R.id.ibDeleteFavorite);
+            btnDeleteFavorite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SharedPreferences preferences = context.getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
+                    String strFavorites = preferences.getString("favorites", "");
 
-        btnDeleteFavorite = (ImageButton) rowView.findViewById(R.id.ibDeleteFavorite);
-        btnDeleteFavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences preferences = context.getSharedPreferences("com.zamigos.espacedali", Context.MODE_PRIVATE);
-                String strFavorites = preferences.getString("favorites", "");
-
-                Integer arrayFav[];
-                JSONArray jsonFav = new JSONArray();
-                if (!strFavorites.isEmpty()) {
-                    try {
-                        jsonFav = new JSONArray(strFavorites);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                for (int i = 0; i < jsonFav.length(); i++) {
-                    try {
-                        if (jsonFav.getInt(i) == Integer.parseInt(viewHolder.ec_tv_id_oeuvre.getText().toString())) {
-                            oeuvreList.remove(i);
-                            jsonFav.remove(i);
+                    Integer arrayFav[];
+                    JSONArray jsonFav = new JSONArray();
+                    if (!strFavorites.isEmpty()) {
+                        try {
+                            jsonFav = new JSONArray(strFavorites);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
                     }
+
+                    for (int i = 0; i < jsonFav.length(); i++) {
+                        try {
+                            if (jsonFav.getInt(i) == Integer.parseInt(viewHolder.ec_tv_id_oeuvre.getText().toString())) {
+                                oeuvreList.remove(i-1);
+                                jsonFav.remove(i);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    preferences.edit().putString("favorites", jsonFav.toString()).commit();
+                    notifyDataSetChanged();
                 }
-                preferences.edit().putString("favorites", jsonFav.toString()).commit();
-                notifyDataSetChanged();
-            }
-        });
+            });
+        }
         viewHolder.ec_tv_title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +139,8 @@ public class FavoriteAdpater extends BaseAdapter {
 
         return rowView;
     }
+
+
 
     private static class ViewHolder {
         public TextView ec_tv_title, ec_tv_id_oeuvre;

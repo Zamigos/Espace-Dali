@@ -5,20 +5,23 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="share_text">Share with your friends</string>
     <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
     <string name="nav_home">Home</string>
     <string name="nav_theme">Theme</string>
-    <string name="nav_visite_plan">Visite Plan</string>
+    <string name="nav_visite_plan">Visit Plan</string>
     <string name="nav_favorite">Favorite</string>
-    <string name="nav_gallery">Galerie</string>
+    <string name="nav_gallery">Gallery</string>
     <string name="nav_subtitle_info">Practical Information</string>
     <string name="nav_information">Information</string>
     <string name="nav_map_info">Map</string>
+    <string name="nav_search">Search artworks</string>
 
     <string name="nav_header_logo_description">Dali Space</string>
     <string name="activity_title_theme">Theme</string>
     <string name="activity_title_comment">Comment</string>
-    <string name="activity_title_oeuvre">Oeuvre</string>
+    <string name="activity_title_oeuvre">Artwork</string>
     <string name="activity_title_detail">Detail</string>
 
     <string name="txt_theme_illustration">Illustration</string>
@@ -26,5 +29,18 @@
     <string name="txt_theme_cinema">Cinema</string>
     <string name="txt_theme_paint">Painting</string>
     <string name="txt_theme_sculpture">Sculpture</string>
-    <string name="btnHomeOeuvre">Les œuvres</string>
+    <string name="btnHomeOeuvre">Artworks</string>
+    <string name="description_home">Dalí like you never see him!</string>
+    <string name="home_btn_plan">Visit Plan</string>
+    <string name="btnComment">Comments</string>
+    <string name="btnReset">Reset</string>
+    <string name="btn_send_comment">Send</string>
+    <string name="info_page_title">Museum Dalí Space Paris</string>
+    <string name="description_info_page">Dalí Space in Montmartre, the only permanent exposition in France totally dedicated to Salvador Dalí, the master of surrealism.</string>
+    <string name="message_add_in_favorite">Artwork is added to your favories.</string>
+    <string name="message_remove_favori">Artwork is removed from your favories.</string>
+    <string name="activity_information">Information</string>
+    <string name="activity_gallery">Gallery</string>
+    <string name="activity_plan">Visit Plan</string>
+    <string name="activity_favorite">Favorite</string>
 </resources>
